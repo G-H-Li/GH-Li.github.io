@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | GH-Li的分享</title>
+<title>二分查找 | GH-Li的分享</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,7 +18,16 @@
 
 
 
-    <meta name="description" content="I&#39;m going to live every minute of my life!">
+    <meta name="description" content="注意点：
+
+high=num.length -1; low=0
+mid = (low + high) &gt;&gt; 1
+循环终止条件：low &lt;= high，不是low&lt;high
+跳出循环时，low != high
+
+
+算法..." />
+    <meta name="keywords" content="算法训练" />
   </head>
   <body>
     <div id="app" class="main">
@@ -88,14 +97,66 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="tags-container">
+          <div class="post-detail">
+            <h2 class="post-title">二分查找</h2>
+            <div class="post-date">2021-04-06</div>
             
-              <a class="tag" href="https://g-h-li.github.io/GH-Li.github.io/tag/SLXGL6bIZ/">算法训练</a>
+            <div class="post-content" v-pre>
+              <h2 id="注意点">注意点：</h2>
+<ul>
+<li><code>high=num.length -1; low=0</code></li>
+<li><code>mid = (low + high) &gt;&gt; 1</code></li>
+<li>循环终止条件：<code>low &lt;= high</code>，不是<code>low&lt;high</code></li>
+<li>跳出循环时，<code>low != high</code></li>
+</ul>
+<!-- more -->
+<h2 id="算法应用">算法应用</h2>
+<pre><code class="language-java">//num为升序数组
+public int search(int[] nums, int target){
+    int low=0; int high= num.length-1; int mid;
+    while(low &lt;= high){
+        mid = (low+high) &gt;&gt; 1;
+        if(nums[mid] == target){
+            return mid;
+        }else if(nums[mid] &lt; target){
+            low = mid +1;
+        }else{
+            high = mid -1;
+        }
+    }
+}
+</code></pre>
+<p>在应用过程中，会出现相关变种，变化主要存在两处：</p>
+<ol>
+<li>改变if-else的判断条件：如将<code>==</code>和<code>&lt;</code>这两种情况合并，以此去查找target在有序数组的上边界（<code>low</code>)，只判断<code>&lt;</code>，查找target在有序数组的下边界（<code>high</code>)。</li>
+<li>改变<code>low</code>和<code>high</code>值的变化规则，如：查找循环数组分界点、查找山峰数组的山峰</li>
+</ol>
+
+            </div>
             
-              <a class="tag" href="https://g-h-li.github.io/GH-Li.github.io/tag/19vUbSrA5/">Gridea</a>
+              <div class="tag-container">
+                
+                  <a href="https://g-h-li.github.io/GH-Li.github.io/tag/SLXGL6bIZ/" class="tag">
+                    算法训练
+                  </a>
+                
+              </div>
             
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://g-h-li.github.io/GH-Li.github.io/post/hello-gridea/">
+                  <h3 class="post-title">
+                    Hello Gridea
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
           </div>
+
         </div>
       </div>
     </div>
