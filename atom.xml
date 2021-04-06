@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://g-h-li.github.io/GH-Li.github.io/</id>
     <title>GH-Li的分享</title>
-    <updated>2021-04-06T04:59:32.463Z</updated>
+    <updated>2021-04-06T05:01:02.501Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://g-h-li.github.io/GH-Li.github.io/"/>
     <link rel="self" href="https://g-h-li.github.io/GH-Li.github.io/atom.xml"/>
@@ -16,7 +16,7 @@
         <link href="https://g-h-li.github.io/GH-Li.github.io/post/er-fen-cha-zhao/">
         </link>
         <updated>2021-04-06T04:26:09.000Z</updated>
-        <summary type="html"><![CDATA[<p><img src="https://g-h-li.github.io/GH-Li.github.io//post-images/1617685052657.jfif" alt="" loading="lazy">## 注意点：</p>
+        <summary type="html"><![CDATA[<h2 id="注意点">注意点：</h2>
 <ul>
 <li><code>high=num.length -1; low=0</code></li>
 <li><code>mid = (low + high) &gt;&gt; 1</code></li>
@@ -24,7 +24,7 @@
 <li>跳出循环时，<code>low != high</code></li>
 </ul>
 ]]></summary>
-        <content type="html"><![CDATA[<p><img src="https://g-h-li.github.io/GH-Li.github.io//post-images/1617685052657.jfif" alt="" loading="lazy">## 注意点：</p>
+        <content type="html"><![CDATA[<h2 id="注意点">注意点：</h2>
 <ul>
 <li><code>high=num.length -1; low=0</code></li>
 <li><code>mid = (low + high) &gt;&gt; 1</code></li>
