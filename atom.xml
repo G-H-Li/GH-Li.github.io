@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://g-h-li.github.io/GH-Li.github.io/</id>
     <title>GH-Li的分享</title>
-    <updated>2021-04-06T05:01:02.501Z</updated>
+    <updated>2021-04-06T16:25:43.128Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://g-h-li.github.io/GH-Li.github.io/"/>
     <link rel="self" href="https://g-h-li.github.io/GH-Li.github.io/atom.xml"/>
@@ -10,6 +10,40 @@
     <logo>https://g-h-li.github.io/GH-Li.github.io/images/avatar.png</logo>
     <icon>https://g-h-li.github.io/GH-Li.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, GH-Li的分享</rights>
+    <entry>
+        <title type="html"><![CDATA[HTTP与HTTPS]]></title>
+        <id>https://g-h-li.github.io/GH-Li.github.io/post/http-yu-https/</id>
+        <link href="https://g-h-li.github.io/GH-Li.github.io/post/http-yu-https/">
+        </link>
+        <updated>2021-04-06T16:06:44.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="http">HTTP</h2>
+<h2 id="https">HTTPS</h2>
+<ol>
+<li><strong>是什么</strong><br>
+HTTP+SSL(Security Sockets Layer)，通过SSL搭建隧道进行通信</li>
+<li><strong>为什么</strong>：HTTP存在安全性问题
+<ul>
+<li>使用明文通信，容易被窃取</li>
+<li>无法确认通信方的身份，容易伪装</li>
+<li>报文可能会被修改</li>
+</ul>
+</li>
+<li><strong>怎么办</strong><br>
+为了解决http的安全性问题，https通过以下三点来实现：
+<ul>
+<li>加密（非对称加密与对称加密相结合）：首先使用非对称加密进行身份认证，认证成功后使用对称加密进行数据传输。</li>
+<li>认证（证书机制）：TSL证书核验</li>
+<li>完整性保护（报文摘要）：</li>
+</ul>
+</li>
+<li><strong>操作流程</strong></li>
+</ol>
+<h2 id="参考资料">参考资料</h2>
+<ul>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/HTTP.md#%E5%85%ADhttps">CS-Notes HTTPS</a></li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[二分查找]]></title>
         <id>https://g-h-li.github.io/GH-Li.github.io/post/er-fen-cha-zhao/</id>

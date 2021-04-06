@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>算法训练 | GH-Li的分享</title>
+<title>HTTP与HTTPS | GH-Li的分享</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,7 +18,20 @@
 
 
 
-    <meta name="description" content="I&#39;m going to live every minute of my life!">
+    <meta name="description" content="HTTP
+HTTPS
+
+是什么
+HTTP+SSL(Security Sockets Layer)，通过SSL搭建隧道进行通信
+为什么：HTTP存在安全性问题
+
+使用明文通信，容易被窃取
+无法确认通信方的身份，容易伪装
+报文可能会被修改
+
+
+..." />
+    <meta name="keywords" content="计算机网络,面试" />
   </head>
   <body>
     <div id="app" class="main">
@@ -92,40 +105,69 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="current-tag">标签: 算法训练</h2>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://g-h-li.github.io/GH-Li.github.io/post/er-fen-cha-zhao/">
-                  <h2 class="post-title">二分查找</h2>
-                </a>
-                <div class="post-date">
-                  2021-04-06
-                </div>
-                <div class="post-abstract">
-                  <h2 id="注意点">注意点：</h2>
+          <div class="post-detail">
+            <h2 class="post-title">HTTP与HTTPS</h2>
+            <div class="post-date">2021-04-07</div>
+            
+              <div class="feature-container" style="background-image: url('/post-images/http-yu-https.jpg')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <h2 id="http">HTTP</h2>
+<h2 id="https">HTTPS</h2>
+<ol>
+<li><strong>是什么</strong><br>
+HTTP+SSL(Security Sockets Layer)，通过SSL搭建隧道进行通信</li>
+<li><strong>为什么</strong>：HTTP存在安全性问题
 <ul>
-<li><code>high=num.length -1; low=0</code></li>
-<li><code>mid = (low + high) &gt;&gt; 1</code></li>
-<li>循环终止条件：<code>low &lt;= high</code>，不是<code>low&lt;high</code></li>
-<li>跳出循环时，<code>low != high</code></li>
+<li>使用明文通信，容易被窃取</li>
+<li>无法确认通信方的身份，容易伪装</li>
+<li>报文可能会被修改</li>
+</ul>
+</li>
+<li><strong>怎么办</strong><br>
+为了解决http的安全性问题，https通过以下三点来实现：
+<ul>
+<li>加密（非对称加密与对称加密相结合）：首先使用非对称加密进行身份认证，认证成功后使用对称加密进行数据传输。</li>
+<li>认证（证书机制）：TSL证书核验</li>
+<li>完整性保护（报文摘要）：</li>
+</ul>
+</li>
+<li><strong>操作流程</strong></li>
+</ol>
+<h2 id="参考资料">参考资料</h2>
+<ul>
+<li><a href="https://github.com/CyC2018/CS-Notes/blob/master/notes/HTTP.md#%E5%85%ADhttps">CS-Notes HTTPS</a></li>
 </ul>
 
-                </div>
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://g-h-li.github.io/GH-Li.github.io/tag/DCLyQ26B7/" class="tag">
+                    计算机网络
+                  </a>
+                
+                  <a href="https://g-h-li.github.io/GH-Li.github.io/tag/ST6NDELrkH/" class="tag">
+                    面试
+                  </a>
+                
               </div>
-              
-                <a class="right" href="https://g-h-li.github.io/GH-Li.github.io/post/er-fen-cha-zhao/">
-                  <div class="feature-container" style="background-image: url('https://g-h-li.github.io/GH-Li.github.io//post-images/er-fen-cha-zhao.jfif')">
-                  </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://g-h-li.github.io/GH-Li.github.io/post/er-fen-cha-zhao/">
+                  <h3 class="post-title">
+                    二分查找
+                  </h3>
                 </a>
-              
-            </article>
-          
+              </div>
+            
 
-          <div class="pagination-container">
-  
-  
-</div>
+            
+
+          </div>
 
         </div>
       </div>
