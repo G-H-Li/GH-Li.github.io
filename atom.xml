@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://g-h-li.github.io/GH-Li.github.io/</id>
     <title>GH-Li的分享</title>
-    <updated>2021-04-06T16:26:14.566Z</updated>
+    <updated>2021-04-08T23:21:41.883Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://g-h-li.github.io/GH-Li.github.io/"/>
     <link rel="self" href="https://g-h-li.github.io/GH-Li.github.io/atom.xml"/>
@@ -10,6 +10,16 @@
     <logo>https://g-h-li.github.io/GH-Li.github.io/images/avatar.png</logo>
     <icon>https://g-h-li.github.io/GH-Li.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, GH-Li的分享</rights>
+    <entry>
+        <title type="html"><![CDATA[动态规划]]></title>
+        <id>https://g-h-li.github.io/GH-Li.github.io/post/dong-tai-gui-hua/</id>
+        <link href="https://g-h-li.github.io/GH-Li.github.io/post/dong-tai-gui-hua/">
+        </link>
+        <updated>2021-04-08T23:19:30.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="定义">定义</h2>
+<h2 id="算法描述">算法描述</h2>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[HTTP与HTTPS]]></title>
         <id>https://g-h-li.github.io/GH-Li.github.io/post/http-yu-https/</id>
@@ -85,8 +95,15 @@ public int search(int[] nums, int target){
 <p>在应用过程中，会出现相关变种，变化主要存在两处：</p>
 <ol>
 <li>改变if-else的判断条件：如将<code>==</code>和<code>&lt;</code>这两种情况合并，以此去查找target在有序数组的上边界（<code>low</code>)，只判断<code>&lt;</code>，查找target在有序数组的下边界（<code>high</code>)。</li>
-<li>改变<code>low</code>和<code>high</code>值的变化规则，如：查找循环数组分界点、查找山峰数组的山峰</li>
+<li>改变<code>low</code>和<code>high</code>值的变化规则，如：查找循环数组分界点、查找山峰数组的山峰、</li>
 </ol>
+<h2 id="查找意义">查找意义</h2>
+<p>查找意义的判断主要根据：mid值变化的判断式进行判定</p>
+<ul>
+<li><code>nums[mid] == target</code> ：查找等于target的值位置（<code>mid</code>）</li>
+<li><code>nums[mid] &lt; target</code> ：查找小于taget的最大值位置（<code>high</code>)</li>
+<li><code>nums[mid] &lt;= target</code>：查找大于target的最小值位置 （<code>low</code>)</li>
+</ul>
 ]]></content>
     </entry>
 </feed>
