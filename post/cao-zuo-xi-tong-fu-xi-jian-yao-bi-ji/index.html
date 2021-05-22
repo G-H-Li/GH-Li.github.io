@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>操作系统复习简要笔记 | GH-Li的分享</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://g-h-li.github.io/GH-Li.github.io//favicon.ico?v=1621670831758">
+<link rel="stylesheet" href="https://g-h-li.github.io/GH-Li.github.io//styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="基本特征
+
+并发（进程、线程；与并行的区别）
+共享（互斥共享、同时共享）
+虚拟（时分复用、空分复用）
+异步
+
+基本功能
+
+进程管理：进程管理、同步、通信、死锁、调度策略
+内存管理：内存分配、地址映射、虚拟内存等
+文件管理：文件读写管理
+设备..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://g-h-li.github.io/GH-Li.github.io/">
+        <img src="https://g-h-li.github.io/GH-Li.github.io//images/avatar.png?v=1621670831758" class="site-logo">
+        <h1 class="site-title">GH-Li的分享</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            文章
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/G-H-Li" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      I'm going to live every minute of my life!
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/G-H-Li" target="_blank">GH-Li</a> | <a class="rss" href="https://g-h-li.github.io/GH-Li.github.io//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">操作系统复习简要笔记</h2>
+            <div class="post-date">2021-05-22</div>
+            
+            <div class="post-content" v-pre>
+              <h2 id="基本特征">基本特征</h2>
+<ul>
+<li>并发（进程、线程；与并行的区别）</li>
+<li>共享（互斥共享、同时共享）</li>
+<li>虚拟（时分复用、空分复用）</li>
+<li>异步</li>
+</ul>
+<h2 id="基本功能">基本功能</h2>
+<ul>
+<li>进程管理：进程管理、同步、通信、死锁、调度策略</li>
+<li>内存管理：内存分配、地址映射、虚拟内存等</li>
+<li>文件管理：文件读写管理</li>
+<li>设备管理：设备分配、处理、缓冲管理、虚拟设备等</li>
+</ul>
+<h2 id="进程管理">进程管理</h2>
+<ul>
+<li>进程：资源分配的基本单位。进程概念的具体实现：进程控制块PCB（描述进程的基本信息和运行状态，管理进程操作即管理PCB）</li>
+<li>线程：独立调度的基本单位。一个进程中存在多个线程，共享进程资源</li>
+</ul>
+<h3 id="进程管理实现细则">进程管理实现细则</h3>
+<h4 id="1-进程状态">1、进程状态</h4>
+<ul>
+<li>
+<p>就绪（ready）：等待被调度</p>
+</li>
+<li>
+<p>运行（running）</p>
+</li>
+<li>
+<p>阻塞（waiting）：等待资源<br>
+<img src="https://g-h-li.github.io/GH-Li.github.io//post-images/1621664272395.png" alt="" loading="lazy"></p>
+<h4 id="2-进程调度算法保证吞吐量和周转时间">2、进程调度算法：保证吞吐量和周转时间</h4>
+<ul>
+<li>先来先服务</li>
+<li>非抢占式短作业优先</li>
+<li>最短剩余时间优先（抢占式短作业优先）</li>
+<li>时间片轮转：基于先来先服务的原则构建任务执行顺序；关键点时间片大小</li>
+<li>优先级调度：随着时间推移，增加进程优先级</li>
+<li>多级反馈队列：上层队列优先级大于下层队列，执行时间片小于下层队列<br>
+<img src="https://g-h-li.github.io/GH-Li.github.io//post-images/1621664927262.png" alt="" loading="lazy"></li>
+</ul>
+<h4 id="3-进程同步">3、进程同步</h4>
+<ul>
+<li>P、V操作</li>
+<li>管程</li>
+<li>常见同步问题：哲学家进餐、读者-写者、理发</li>
+</ul>
+<h4 id="4-进程通信">4、进程通信</h4>
+<ul>
+<li>管道（只支持半双工通信即单向交替传输；只能再父子进程或者兄弟进程中使用）</li>
+<li>FIFO，也称命名管道，去除了只能在父子进程使用的限制</li>
+<li>消息队列</li>
+<li>信号量</li>
+<li>共享存储</li>
+<li>Sockets（套接字）：不同机器</li>
+</ul>
+</li>
+</ul>
+<h2 id="死锁">死锁</h2>
+<h3 id="死锁必要条件">死锁必要条件：</h3>
+<ul>
+<li>互斥：资源只存在两种状态：被分配状态和可用状态</li>
+<li>占有和等待：已经得到某个资源的进程可以继续请求其他资源</li>
+<li>不可抢占：资源无法抢占式获得</li>
+<li>环路等待：有两个及以上进程线程环路，等待其他进程释放资源</li>
+</ul>
+<h3 id="解决死锁方法">解决死锁方法：</h3>
+<ul>
+<li>鸵鸟策略：忽略死锁</li>
+<li>死锁检测和死锁恢复
+<ul>
+<li>死锁检测：检测环路、检测资源使用情况</li>
+<li>死锁恢复：kill进程、rollback进程、抢占资源</li>
+</ul>
+</li>
+<li>死锁预防：破坏四个必要条件
+<ul>
+<li>虚拟多个资源，破坏互斥</li>
+<li>一次性请求所有资源，破坏占有等待</li>
+<li>抢占式获取，破坏不可抢占</li>
+<li>给资源编号，按照顺序进行资源请求，破坏环路等待</li>
+</ul>
+</li>
+<li>死锁避免（银行家算法）</li>
+</ul>
+<h2 id="内存管理">内存管理</h2>
+<p>内存管理一般采用虚拟内存机制，即分配虚拟内存地址，虚拟内存地址与实际内存地址存在映射关系；存在三种分配体系：分页式、分段式、段页式。</p>
+<h3 id="分页式">分页式</h3>
+<p>分页式结构一般为页表-页；通过虚拟地址的一段查询页表得到页，一般将真正需要的数据所在页或段调入实际内存中，因此存在页面置换算法。</p>
+<h4 id="页面置换算法">页面置换算法</h4>
+<ul>
+<li>最长时间不被访问：理论最佳，无法实现，因为无法知道某页面多长时间不再被访问</li>
+<li>最近最久未使用：置换内存中最近最久未使用的页面，使用链表维护，代价较大</li>
+<li>最近未使用：每个页面有两个状态位：R（表示被访问），M（表示被修改）；优先换出R=0，M=1的页面</li>
+<li>先进先出：置换最先进入的页面</li>
+<li>第二次机会算法：改进先进先出，提供第二次机会；如果老页面的R位为0，直接置换；如果为1，置0，并把页面插入链表尾部</li>
+<li>时钟：改进第二次机会算法，采用循环链表</li>
+</ul>
+<h3 id="分段式">分段式</h3>
+<p>将内存分为多段，每一段可以实现动态增长，避免内存的覆盖</p>
+<h3 id="段页式">段页式</h3>
+<p>将内存分为多段，每一段采用分页</p>
+<h2 id="设备管理">设备管理</h2>
+<p>主要是磁盘管理，读取文件主要有以下几种方法：</p>
+<ul>
+<li>先来先服务</li>
+<li>最短寻道时间（容易出现饥饿现象）</li>
+<li>电梯算法Scan</li>
+</ul>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://g-h-li.github.io/GH-Li.github.io/post/dong-tai-gui-hua/">
+                  <h3 class="post-title">
+                    动态规划
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>
