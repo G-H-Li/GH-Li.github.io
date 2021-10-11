@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://g-h-li.github.io/GH-Li.github.io/</id>
     <title>GH-Li的分享</title>
-    <updated>2021-05-24T03:21:50.385Z</updated>
+    <updated>2021-10-11T11:00:25.648Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://g-h-li.github.io/GH-Li.github.io/"/>
     <link rel="self" href="https://g-h-li.github.io/GH-Li.github.io/atom.xml"/>
@@ -10,6 +10,36 @@
     <logo>https://g-h-li.github.io/GH-Li.github.io/images/avatar.png</logo>
     <icon>https://g-h-li.github.io/GH-Li.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, GH-Li的分享</rights>
+    <entry>
+        <title type="html"><![CDATA[CSAPP bomb实验教程]]></title>
+        <id>https://g-h-li.github.io/GH-Li.github.io/post/csapp-shi-yan-jiao-cheng/</id>
+        <link href="https://g-h-li.github.io/GH-Li.github.io/post/csapp-shi-yan-jiao-cheng/">
+        </link>
+        <updated>2021-10-05T10:06:44.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="实验链接">实验链接</h1>
+<p>https://li-qingan.gitee.io/course/csapp/BombLab.html</p>
+<h1 id="环境搭建">环境搭建</h1>
+<p>本实验需要使用linux系统进行实验。我们推荐采用linux的ubuntu16.04及以上发行版。对于实验环境搭建，存在以下三种办法。</p>
+<ul>
+<li>使用原生linux系统（包括双系统）</li>
+<li>使用VMware、virtualBox等虚拟机软件，进行Ubuntu虚拟机安装</li>
+<li>使用WSL(Windows SubSystem for Linux)，仅针对Windows 10用户<br>
+此处主要提供VMware安装虚拟机和WSL相关教程。</li>
+</ul>
+<h2 id="vmware安装虚拟机">VMware安装虚拟机</h2>
+<p>自行寻找破解版，安装Ubuntu镜像即可。</p>
+<h2 id="wsl安装教程">WSL安装教程</h2>
+<ul>
+<li>（<strong>推荐</strong>）新版WSL安装教程：https://docs.microsoft.com/zh-cn/windows/wsl/install</li>
+<li>旧版WSL手动安装教程：https://docs.microsoft.com/zh-cn/windows/wsl/install-manual</li>
+</ul>
+<h1 id="gdb使用教程">gdb使用教程</h1>
+<ul>
+<li>常用gdb命令教程：https://ipcmen.com/gdb</li>
+<li>更多gdb命令：https://github.com/hellogcc/100-gdb-tips/blob/master/refcard.pdf</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[计算机网络知识点梳理]]></title>
         <id>https://g-h-li.github.io/GH-Li.github.io/post/ji-suan-ji-wang-luo-zhi-shi-dian-shu-li/</id>
